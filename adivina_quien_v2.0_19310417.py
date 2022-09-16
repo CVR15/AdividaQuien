@@ -1,24 +1,24 @@
 """
-***ADIVINA QUIÃ‰N ***
+***ADIVINA QUIÉN ***
 ***    ver 2     ***
-@author: Cristian VillaseÃ±or
+@author: Cristian Villaseñor
 """
-#En esta versiÃ³n no se maneja el aprendizaje 
+#En esta versión no se maneja el aprendizaje 
 #pero auto-selecciona la mejor pregunta y se implementa base de datos
 
 import mysql.connector
 import random
 
-preguntas=["Â¿Es hombre?",
-           "Â¿Tiene el pelo largo?",
-           "Â¿Tiene barba/bigote?",
-           "Â¿Se llama Daniel?",
-           "Â¿Su registro comienza con 19110...?",
-           "Â¿Tiene el pelo chino?",
-           "Â¿Usa lentes?",
-           "Â¿Tiene el pelo Negro o castaÃ±o?",
-           "Â¿Se llama Juan?",
-           "Â¿Tiene complexiÃ³n delgada?" ]
+preguntas=["¿Es hombre?",
+           "¿Tiene el pelo largo?",
+           "¿Tiene barba/bigote?",
+           "¿Se llama Daniel?",
+           "¿Su registro comienza con 19110...?",
+           "¿Tiene el pelo chino?",
+           "¿Usa lentes?",
+           "¿Tiene el pelo Negro o castaño?",
+           "¿Se llama Juan?",
+           "¿Tiene complexión delgada?" ]
 
 respuestas=[5,5,5,5,5,5,5,5,5,5]
 #---------------------------------------
@@ -57,7 +57,7 @@ def datousuario(columna,modo):
         if(resp != 0 and resp!= 1):
             print("Respuesta invalida intentalo de nuevo")
             if(modo==0): print(preguntas[columna])
-            else:        print("Â¿acertÃ©?\nIngresa tu respuesta 1 para si y 0 para no")
+            else:        print("¿acerté?\nIngresa tu respuesta 1 para si y 0 para no")
         else: bandera=1
     return resp
 #---------------------------------------
@@ -70,7 +70,7 @@ while(reinicio==0):
     cur.execute("SELECT * FROM alumnos")
     datos = cur.fetchall()
     
-    print("Bienvenido al sistema de Adivina Quien del 7F1\n\nPiensa en un compaÃ±ero del salÃ³n y yo intentarÃ© adivinarlo\n")
+    print("Bienvenido al sistema de Adivina Quien del 7F1\n\nPiensa en un compañero del salón y yo intentaré adivinarlo\n")
     for etapa in range(5):
         columna = buscapregunta(datos)
         print(preguntas[columna])
@@ -79,20 +79,20 @@ while(reinicio==0):
         remuevedatos(datos, columna, respuestas[columna])
     
         if(len(datos)==1):
-            print("Â¡Ya sÃ©! Estas pensando en ",datos[0][1], "Â¿acertÃ©?")
+            print("¡Ya sé! Estas pensando en ",datos[0][1], "¿acerté?")
             print("Ingresa tu respuesta 1 para si y 0 para no")
             final=datousuario(0,1)
             break
         
     if(len(datos)>1):
-        print("Hmmm hay mas de una persona con esa descripciÃ³n....\n")
+        print("Hmmm hay mas de una persona con esa descripción....\n")
         azar=random.randint(0,len(datos)-1)
-        print("Â¡Ya sÃ©! Estas pensando en ",datos[azar][1], "Â¿acertÃ©?")
+        print("¡Ya sé! Estas pensando en ",datos[azar][1], "¿acerté?")
         print("Ingresa tu respuesta 1 para si y 0 para no")
         final=datousuario(0,1)
 
     if(final == 1): print("Yo siempre gano, gracias por jugar")
-    else: print("Vaya creo que debo de afinar mis habilidades de adivinaciÃ³n")
+    else: print("Vaya creo que debo de afinar mis habilidades de adivinación")
     reinicio=1
     print("Si deseas volver a jugar presiona 1 de lo contrario presiona 0")
     inicio=datousuario(0,1)
