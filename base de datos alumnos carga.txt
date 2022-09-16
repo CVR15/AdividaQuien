@@ -1,0 +1,42 @@
+CREATE DATABASE adivina7f1;
+USE adivina7f1;
+
+CREATE TABLE alumnos  (
+    Id INT NOT NULL AUTO_INCREMENT,
+    Nombre VARCHAR(50) NOT NULL,
+    Hombre INT(10) NOT NULL,
+    PeloLargo INT(10) NOT NULL,
+    BarbaBigote INT(10) NOT NULL,
+    Daniel INT(10) NOT NULL,
+    Registro INT(10) NOT NULL,
+    PeloChino INT(10) NOT NULL,
+    Lentes INT(10) NOT NULL,
+    PeloNegro INT(10) NOT NULL,
+    Juan INT(10) NOT NULL,
+    Delgado INT(10) NOT NULL,
+    PRIMARY KEY(Id)
+)
+;
+
+INSERT INTO alumnos
+    (Nombre, Hombre, PeloLargo, BarbaBigote, Daniel, Registro, PeloChino, Lentes, PeloNegro, Juan, Delgado)
+VALUES
+	('Javier Aguilar',1,	1,	1,	0,	1,	0,	0,	1,	0,	0),
+	('Yadira Barajas',0,	1,	0,	0,	0,	1,	0,	0,	0,	0),
+	('Josue Cordero', 1, 1,	1,	0,	0,	0,	1,	1,	0,	1),
+	('Enrique Cuevas',1,	0,	0,	0,	0,	1,	0,	1,	0,	0),
+	('Rosario Frayre',0,	1,	0,	0,	0,	1,	0,	0,	0,	1),
+	('Estefany Gallegos',0,	1,	0,	0,	0,	0,	0,	1,	0,	1),
+	('Juan Israel Garcia',1,0,	0,	0,	0,	0,	0,	1,	1,	1),
+	('Omar Daniel Godinez',1,0,1,	1,	0,	1,	1,	1,	0,	1),
+	('Eliseo Hernandez',	1,	0,	0,	0,	0,	0,	1,	1,	0,	0),
+	('Luis Daniel Lozano',1,0,	1,	1,	1,	1,	1,	1,	0,	0),
+	('Monica Martinez',0,1,	0,	0,	0,	1,	0,	1,	0,	0),
+	('Daniel Panes',   1,0,	0,	1,	1,	1,	0,	1,	0,	0),
+	('Daniel Pelayo',	1,	0,	1,	1,	1,	0,	0,	1,	0,	0),
+	('Maximiliano Rodriguez',	1,	0,	1,	0,	1,	0,	0,	1,	0,	1),
+	('Andres Rosales',	1,	0,	0,	0,	1,	0,	0,	1,	0,	1),
+	('Juan Pablo Salazar',  1,	0,	1,	0,	0,	0,	0,	1,	1,	0),
+	('Ricardo Valdez',	1,	0,	0,	0,	0,	0,	0,	1,	0,	0),
+	('Cristian Villasenor',	1,	0,	1,	0,	0,	0,	1,	1,	0,	0)
+;
